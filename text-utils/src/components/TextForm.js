@@ -8,6 +8,7 @@ export default function TextForm(props) {
         //console.log("upper case was clicked " + text);
         let newText = text.toUpperCase();
         setText(newText); 
+        props.Alert("converted to uppercase", "success");
     }
     const handleOnChange = (event) => {
         //console.log("on change");
@@ -16,11 +17,13 @@ export default function TextForm(props) {
     const handleClearClick = (event) => {
         //console.log("on change");
         setText(" ");
+        props.Alert("text cleared", "success");
     }
         
     const handleLoClick = () => {
         let newText = text.toLowerCase();
         setText(newText);
+        props.Alert("converted to lowercase", "success");
     }
     const [text, setText] = useState('Enter Text Here');
     //text = "new text"; // wromg way to change state 
